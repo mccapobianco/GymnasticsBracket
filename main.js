@@ -136,7 +136,9 @@ function submitOnclick(){
             }
         }
     }
-    decisions.push(document.getElementById(`M16T1`).selectedIndex)
+    let finalElement = document.getElementById(`M16T1`);
+    updateOptions(finalElement, remove=false);
+    decisions.push(finalElement.selectedIndex)
 
     if (Object.values(decisions).includes(null) || Object.values(decisions).includes(0)){
         window.alert('All matchups must be decided before submitting.');
