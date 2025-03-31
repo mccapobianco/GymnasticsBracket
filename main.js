@@ -38,7 +38,7 @@ function getValueFromId(id){
     return elem.innerHTML;
 }
 
-function updateOptions(select){
+function updateOptions(select, remove=true){
     let v = select.value
     // Clear existing options
     while (select.options.length > 1) {
@@ -65,7 +65,8 @@ function updateOptions(select){
             getValueFromId(`M${2*(m-8)-1}T3`),
             getValueFromId(`M${2*(m-8)-1}T4`),
         ];
-        options = options.filter(item => item != getValueFromId(`M${m}T${3-t}`));
+        if (remove)
+            options = options.filter(item => item != getValueFromId(`M${m}T${3-t}`));
     } else {
         options = [
             getValueFromId(`M${2*(m-8)}T1`),
@@ -73,7 +74,8 @@ function updateOptions(select){
             getValueFromId(`M${2*(m-8)}T3`),
             getValueFromId(`M${2*(m-8)}T4`),
         ];
-        options = options.filter(item => item != getValueFromId(`M${m}T${7-t}`));
+        if (remove)
+            options = options.filter(item => item != getValueFromId(`M${m}T${7-t}`));
         
     }
     
@@ -126,7 +128,9 @@ function submitOnclick(){
     for (var m=9; m<=15; m++){
         for (var t=1; t<=4; t++){
             try{
-                decisions.push(document.getElementById(`M${m}T${t}`).selectedIndex)
+                let selectElement = document.getElementById(`M${m}T${t}`);
+                updateOptions(selectElement, remove=false);
+                decisions.push(selectElement.selectedIndex)
             } catch {
                 decisions.push(0)
             }
