@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NCAA Gymnastics Challenge 2025</title>
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    label {
+        font-family: Arial;
+        text-align: center;
+    }
+
+    td {
+      text-align:center;
+      width: 20%;
+      vertical-align: bottom;
+    }
+
+    td select {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        font-family: Arial;
+        text-align: center;
+        border: none;
+    }
+
+    tr { border: none; 
+        min-height: "100%";
+        width: 100%;}
+        
+    th { border: none; 
+        min-height: "100%";}
+    table {
+        width: 100%;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    .bottom {
+        border-bottom: solid 2px #000;
+    }
+    .right {
+        border-right: solid 2px #000;
+    }
+    .top {
+        border-top: solid 2px #000;
+    }
+    .left {
+        border-left: solid 2px #000;
+    }
+    a {
+        font-weight: 600;
+        font-family: Arial;
+        text-decoration: none;
+        color: #a70034;
+        -webkit-text-stroke: 1px black;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+
+    
+
+</style>
+<body onload="onload()">
+    <table height="1000px">
+        <tr height="3%">
+            <th>Round 1</th>
+            <th>Round 2</th>
+            <th>Semifinals</th>
+            <th>Finals</th>
+            <th>Champion</th>
+        </tr>
+        
+        <tr height="3%"><td class="bottom"><label id="M1T1"></label></td>       <td></td>                       <td></td>                       <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M1T2"></label></td> <td class="bottom"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M9T1"><option value="" disabled selected>[no selection]</option></select></td>        <td></td>                       <td></td>                       <td class="right bottom top left", style="vertical-align: middle;"><a href="https://docs.google.com/spreadsheets/d/1tKseFLC7Rsd4xNEdOB_59_whGa7iV-zMfgi5z4Yp17w/edit?rm=minimal#gid=1959307818">View Leaderboard</a></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M1T3"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M9T2"><option value="" disabled selected>[no selection]</option></select></td>  <td></td>                       <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M1T4"></label></td> <td class="right"></td>         <td class="bottom"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M13T1"><option value="" disabled selected>[no selection]</option></select></td>        <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom"><label id="M2T1"></label></td>       <td class="right"></td>         <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M13T2"><option value="" disabled selected>[no selection]</option></select></td>  <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M2T2"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M9T3"><option value="" disabled selected>[no selection]</option></select></td>  <td class="right"></td>         <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M2T3"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M9T4"><option value="" disabled selected>[no selection]</option></select></td>  <td class="right"></td>         <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M2T4"></label></td> <td></td>                       <td class="right"></td>         <td class="bottom"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M15T1"><option value="" disabled selected>[no selection]</option></select></td>        <td></td></tr>
+        <tr height="3%"><td class="bottom"><label id="M3T1"></label></td>       <td></td>                       <td class="right"></td>         <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M15T2"><option value="" disabled selected>[no selection]</option></select></td>  <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M3T2"></label></td> <td class="bottom"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M10T1"><option value="" disabled selected>[no selection]</option></select></td>        <td class="right"></td>         <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M3T3"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M10T2"><option value="" disabled selected>[no selection]</option></select></td>  <td class="right"></td>         <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M3T4"></label></td> <td class="right"></td>         <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M13T3"><option value="" disabled selected>[no selection]</option></select></td>  <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom"><label id="M4T1"></label></td>       <td class="right"></td>         <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M13T4"><option value="" disabled selected>[no selection]</option></select></td>  <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M4T2"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M10T3"><option value="" disabled selected>[no selection]</option></select></td>  <td></td>                       <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M4T3"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M10T4"><option value="" disabled selected>[no selection]</option></select></td>  <td></td>                       <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M4T4"></label></td> <td></td>                       <td></td>                       <td class="right"></td>         <td class="bottom"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M16T1"><option value="" disabled selected>[no selection]</option></select></td></tr>
+        <tr height="3%"><td class="bottom"><label id="M5T1"></label></td>       <td></td>                       <td></td>                       <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M5T2"></label></td> <td class="bottom"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M11T1"><option value="" disabled selected>[no selection]</option></select></td>        <td></td>                       <td class="right"></td>         <td><input id="submission_name" placeholder="Submission Name"></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M5T3"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M11T2"><option value="" disabled selected>[no selection]</option></select></td>  <td></td>                       <td class="right"></td>         <td><button id="submit" onclick="submitOnclick()" style="color:#a70034;background-color:#8a8d8f;font-weight:600;">Submit</button></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M5T4"></label></td> <td class="right"></td>         <td class="bottom"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M14T1"><option value="" disabled selected>[no selection]</option></select></td>        <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom"><label id="M6T1"></label></td>       <td class="right"></td>         <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M14T2"><option value="" disabled selected>[no selection]</option></select></td>  <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M6T2"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M11T3"><option value="" disabled selected>[no selection]</option></select></td>  <td class="right"></td>         <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M6T3"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M11T4"><option value="" disabled selected>[no selection]</option></select></td>  <td class="right"></td>         <td class="right"></td>         <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M6T4"></label></td> <td></td>                       <td class="right"></td>         <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M15T3"><option value="" disabled selected>[no selection]</option></select></td>        <td></td></tr>
+        <tr height="3%"><td class="bottom"><label id="M7T1"></label></td>       <td></td>                       <td class="right"></td>         <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M15T4"><option value="" disabled selected>[no selection]</option></select></td>  <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M7T2"></label></td> <td class="bottom"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M12T1"><option value="" disabled selected>[no selection]</option></select></td>        <td class="right"></td>         <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M7T3"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M12T2"><option value="" disabled selected>[no selection]</option></select></td>  <td class="right"></td>         <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M7T4"></label></td> <td class="right"></td>         <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M14T3"><option value="" disabled selected>[no selection]</option></select></td>  <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom"><label id="M8T1"></label></td>       <td class="right"></td>         <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M14T4"><option value="" disabled selected>[no selection]</option></select></td>  <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M8T2"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M12T3"><option value="" disabled selected>[no selection]</option></select></td>  <td></td>                       <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M8T3"></label></td> <td class="bottom right"><select onchange="handleChange(event)" onfocus="updateOptions(this)" id="M12T4"><option value="" disabled selected>[no selection]</option></select></td>  <td></td>                       <td></td>                       <td></td></tr>
+        <tr height="3%"><td class="bottom right"><label id="M8T4"></label></td> <td></td>                       <td></td>                       <td></td>                       <td></td></tr>
+    </table>
+</body>
+    
