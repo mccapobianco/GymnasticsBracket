@@ -1,11 +1,11 @@
-teams = [['Michigan St.', 'Kentucky', 'Ohio St.', 'Penn St.'],
-         ['LSU', 'Arkansas', 'Michigan', 'Maryland/West Virgina'],
-         ['UCLA', 'Minnesota', 'Southern Utah', 'Boise St.'],
-         ['Utah', 'Stanford', 'Denver', 'BYU/Utah St.'],
-         ['Missouri', 'Georgia', 'Arizona', 'Arizona St.'],
-         ['Oklahoma', 'Auburn', 'Nebraska', 'Illinois/UC Davis'],
-         ['California', 'Alabama', 'North Carolina', 'Iowa'],
-         ['Florida', 'Oregon St.', 'NC State', 'Clemson/Rutgers'],
+teams = [['Missouri', 'Arkansas', 'NC State', 'Maryland'],
+         ['Oklahoma','Kentucky','Ohio State','CMU/Rutgers'],
+         ['Alabama','Utah','Denver','Oregon State'],
+         ['UCLA','Minnesota','Iowa','SJSU/Washington'],
+         ['Stanford','Michigan','North Carolina','Utah State'],
+         ['LSU','Clemson','Auburn','Air Force/Nebraska'],
+         ['Georgia','Michigan State','BYU','Southern Utah'],
+         ['Florida', 'California', 'Penn State','ASU/Arizona'],
         ]
 
 function fillBracket(){
@@ -144,8 +144,8 @@ function submitOnclick(){
         window.alert('All matchups must be decided before submitting.');
         return;
     }
-    var encoded_sub = decisions.join('');
-    var url = `https://docs.google.com/forms/d/e/1FAIpQLScYod8IzrDlrxAtEJzgRwUSkKTTF_MjUWKYwIxBul4n3Iac9w/formResponse?submit=Submit?usp=pp_url&entry.304351021=${name}&entry.393263061=${encoded_sub}`;
+    var encoded_sub = decisions.join('');      //https://docs.google.com/forms/d/e/1FAIpQLScYod8IzrDlrxAtEJzgRwUSkKTTF_MjUWKYwIxBul4n3Iac9w/viewform?usp=header
+    var url = `https://docs.google.com/forms/d/e/1FAIpQLScOiLL54Nz1V_MoKntQr3NP3Bftsn2icFw6kbiBLi6A0xkZtA/formResponse?submit=Submit?usp=pp_url&entry.304351021=${name}&entry.393263061=${encoded_sub}`;
     url = encodeURI(url);
     $.post(url);
     submit_button.style.backgroundColor = 'black';
